@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/security
+        http://www.springframework.org/schema/security/spring-security.xsd">
+    
+    <!-- The <http> tag defines the security configuration for HTTP requests.
+		The attribute use-expressions means that we want to use Spring Expression 
+		Language (SpEL) for the expressions.
+	 -->
+    <http use-expressions="true">
+        <!-- The <intercept-url> tag specifies that all users are allowed to enter the
+      		application. We'll examine later how we can protect the sensitive application's 
+			artifacts.
+		-->
+        <intercept-url pattern='/WEB-INF' access='permitAll' />
+        <!-- Defines support for form login with important attributes key/values. -->
+        <form-login login-page="/books" authentication-failure-url="/security/loginfail"
+                    default-target-url="/books" />
+                    
+        <!-- Defines logout link URI. -->
+        <logout logout-success-url="/books"/>
+    </http>
+
+    <!--Defines the authentication mechanism. We hard-code a single user with the role 
+    	ROLE_USER assigned. In commercial applications, the user should be authenticated 
+    	against the database, LDAP, or an SSO mechanism.
+    -->
+    <authentication-manager>
+        <authentication-provider>
+            <user-service>
+                <user name="user" password="user" authorities="ROLE_USER" />
+            </user-service>
+        </authentication-provider>
+    </authentication-manager>
+</beans:beans>
+
