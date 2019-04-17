@@ -1,2 +1,2 @@
-# SpringMVC-Book-Application
+# SpringMVC-Book-ApplicationJPA2
 Spring MVC Book Application
