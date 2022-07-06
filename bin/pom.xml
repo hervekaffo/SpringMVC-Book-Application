@@ -12,7 +12,7 @@
     <jpa.version>1.0.0.Final</jpa.version>
     <joda.time.version>2.2</joda.time.version>
     <usertype.version>3.0.0.GA</usertype.version>
-    <spring.data.jpa.version>1.5.0.RELEASE</spring.data.jpa.version>
+    <spring.data.jpa.version>1.11.23.RELEASE</spring.data.jpa.version>
     <google.guava.version>14.0.1</google.guava.version>
     <joda.time.jsptags.version>1.1.1</joda.time.jsptags.version>
     <slf4j.log4j.version>1.7.6</slf4j.log4j.version>
